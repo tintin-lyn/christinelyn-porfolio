@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christine Lyn N. Cristobal-Gomez - Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0B192C',
+                            900: '#1E3E62',
+                        },
+                        amber: {
+                            500: '#FF6500',
+                            600: '#E05300',
+                        },
+                        slate: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white; color: black; }
+            .print-full-width { width: 100% !important; max-width: none !important; }
+        }
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 no-print transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-amber-500 to-amber-600 flex items-center justify-center text-slate-900 font-extrabold text-xl shadow-lg shadow-amber-500/20 group-hover:scale-105 transition-transform">
+                    CC
+                </div>
+                <div>
+                    <span class="text-lg font-bold tracking-tight text-white block leading-none">Christine Lyn</span>
+                    <span class="text-xs text-amber-500 font-medium">Cristobal-Gomez</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-slate-300">
+                <a href="#home" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Home</a>
+                <a href="#about" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">About & VA Services</a>
+                <a href="#experience" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Experience</a>
+                <a href="#skills" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Skills</a>
+                <a href="#education" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Education</a>
+                <a href="#achievements" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Achievements</a>
+                <a href="#contact" class="px-3 py-2 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Contact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-3">
+                <button onclick="window.print()" class="px-4 py-2 text-sm font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 hover:text-white rounded-lg transition border border-slate-700 flex items-center space-x-2">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Print CV</span>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-2">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">About & VA Services</a>
+            <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Experience</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Skills</a>
+            <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Education</a>
+            <a href="#achievements" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Achievements</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Contact</a>
+            <button onclick="window.print()" class="w-full mt-2 px-4 py-2 text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg transition flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-print"></i>
+                <span>Print Resume</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 relative overflow-hidden bg-gradient-to-b from-slate-900 via-navy-800 to-slate-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-30 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Details Header -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                        <span>Virtual Assistant & Project Coordinator</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+                        Christine Lyn N. <br class="hidden sm:inline">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500">Cristobal-Gomez</span>
+                    </h1>
+
+                    <p class="text-lg sm:text-xl text-slate-300 font-medium">
+                        Virtual Assistant <span class="text-amber-500">•</span> Project Coordinator <span class="text-amber-500">•</span> Document & Technical Specialist
+                    </p>
+
+                    <p class="text-slate-400 max-w-2xl text-base leading-relaxed mx-auto lg:mx-0">
+                        Versatile Civil Engineering graduate transitioning into professional Virtual Assistance. Combining technical drafting, project control, inventory coordination, and administrative precision to deliver efficient remote assistance.
+                    </p>
+
+                    <div class="pt-4 flex flex-wrap items-center justify-center lg:justify-start gap-4 no-print">
+                        <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold hover:shadow-lg hover:shadow-amber-500/25 hover:scale-105 transition-all duration-200 flex items-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Hire / Contact Me</span>
+                        </a>
+                        <a href="#experience" class="px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold transition-all duration-200 flex items-center space-x-2">
+                            <i class="fa-solid fa-briefcase text-amber-500"></i>
+                            <span>View Experience</span>
+                        </a>
+                    </div>
+
+                    <!-- Contact Quick Pills -->
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap justify-center lg:justify-start gap-y-2 gap-x-6 text-sm text-slate-400">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-envelope text-amber-500"></i>
+                            <span>christinelyn.cristobal@gmail.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-phone text-amber-500"></i>
+                            <span>09701429175</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-location-dot text-amber-500"></i>
+                            <span>Madalag, Aklan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Card / Profile Summary -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-amber-500 to-blue-600 rounded-2xl blur opacity-30"></div>
+                        
+                        <div class="relative bg-slate-800 border border-slate-700 rounded-2xl p-6 shadow-2xl overflow-hidden">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-700 mb-6">
+                                <div class="flex items-center space-x-2">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">VA-PROFILE.SUMMARY</span>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="p-4 bg-amber-500/10 border border-amber-500/20 rounded-2xl mb-4">
+                                    <i class="fa-solid fa-headset text-4xl text-amber-500 mb-2"></i>
+                                    <h3 class="text-xl font-bold text-white">Christine Lyn N. Cristobal-Gomez</h3>
+                                    <p class="text-xs text-amber-400 font-semibold tracking-wider uppercase mt-1">Virtual Assistant & Project Specialist</p>
+                                </div>
+
+                                <div class="mt-4 space-y-3 text-left text-sm bg-slate-900/60 p-4 rounded-xl border border-slate-700/50">
+                                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                                        <span class="text-slate-400">Core Expertise:</span>
+                                        <span class="text-slate-200 font-medium">Virtual Assistance</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                                        <span class="text-slate-400">Current Role:</span>
+                                        <span class="text-slate-200 font-medium">Project Eng. / Doc Controller</span>
+                                    </div>
+                                    <div class="flex justify-between border-b border-slate-800 pb-2">
+                                        <span class="text-slate-400">Education:</span>
+                                        <span class="text-slate-200 font-medium">BS Civil Engineering</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-slate-400">Key Tools:</span>
+                                        <span class="text-slate-200 font-medium">AutoCAD, Excel, Word, SketchUp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Virtual Assistance Bio Section -->
+    <section id="about" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Professional Summary</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">About & Virtual Assistance Support</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Career Objective & VA Focus Card -->
+                <div class="lg:col-span-2 bg-slate-800/80 border border-slate-700/80 rounded-2xl p-8 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 text-xl">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Career Objective as a Virtual Assistant</h3>
+                        <p class="text-slate-300 leading-relaxed text-base sm:text-lg mb-6">
+                            Versatile Civil Engineering graduate actively seeking dynamic opportunities as a Virtual Assistant. Looking to apply proven strengths in technical drafting, document control, office productivity tools (MS Excel, MS Word), inventory management, and systematic problem-solving to deliver high-level remote administrative and project support. Dedicated to long-term professional development and seamlessly managing client workflows.
+                        </p>
+                        <h4 class="text-lg font-semibold text-amber-400 mb-2">Why Hire Me as Your VA?</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            With extensive experience in municipal engineering departments, technical facilitation, document control, and inventory management, I bring a structured, detail-oriented approach to virtual assistance. Whether managing complex spreadsheets, maintaining organized document registries, or providing technical drafting support, I ensure efficiency and precision.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-700">
+                        <div class="p-3 bg-slate-900/50 rounded-xl text-center border border-slate-800">
+                            <p class="text-2xl font-bold text-amber-500">6+</p>
+                            <p class="text-xs text-slate-400 mt-1">Years Experience</p>
+                        </div>
+                        <div class="p-3 bg-slate-900/50 rounded-xl text-center border border-slate-800">
+                            <p class="text-2xl font-bold text-amber-500">VA / Admin</p>
+                            <p class="text-xs text-slate-400 mt-1">Ready Capabilities</p>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 p-3 bg-slate-900/50 rounded-xl text-center border border-slate-800">
+                            <p class="text-2xl font-bold text-amber-500">BS CE</p>
+                            <p class="text-xs text-slate-400 mt-1">Engineering Degree</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Background Card -->
+                <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-8 shadow-lg">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 mb-6 text-xl">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-6">Personal Details</h3>
+                    
+                    <ul class="space-y-4 text-sm text-slate-300">
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-user-tag w-5 text-amber-500"></i> Full Name</span>
+                            <span class="font-medium text-white text-right">Christine Lyn N. Cristobal-Gomez</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-venus-mars w-5 text-amber-500"></i> Gender</span>
+                            <span class="font-medium text-white">Female</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-heart w-5 text-amber-500"></i> Civil Status</span>
+                            <span class="font-medium text-white">Married</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-flag w-5 text-amber-500"></i> Citizenship</span>
+                            <span class="font-medium text-white">Filipino</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-church w-5 text-amber-500"></i> Religion</span>
+                            <span class="font-medium text-white">Roman Catholic</span>
+                        </li>
+                        <li class="flex justify-between items-center pb-3 border-b border-slate-700/60">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-cake-candles w-5 text-amber-500"></i> Date of Birth</span>
+                            <span class="font-medium text-white">July 24, 1996</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-slate-400 flex items-center"><i class="fa-solid fa-house w-5 text-amber-500"></i> Address</span>
+                            <span class="font-medium text-white text-right">Napnot, Madalag 5603, Aklan</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Timeline -->
+    <section id="experience" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Career Journey</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Work Experience</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative wrap overflow-hidden p-2 sm:p-10">
+                <!-- Central Vertical Line -->
+                <div class="border-2-2 absolute border-opacity-20 border-slate-700 h-full border left-4 sm:left-1/2 transform -translate-x-1/2"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline group">
+                    <div class="order-1 w-full sm:w-5/12 hidden sm:block text-right pr-8">
+                        <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-400 font-semibold text-sm rounded-full border border-amber-500/30">
+                            Feb 12, 2025 - Present
+                        </span>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-amber-500 shadow-xl w-10 h-10 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-transform duration-300">
+                        <i class="fa-solid fa-user-gear text-slate-950 text-xs mx-auto"></i>
+                    </div>
+                    <div class="order-1 bg-slate-800 border border-slate-700/80 rounded-2xl shadow-xl w-full sm:w-5/12 ml-10 sm:ml-0 p-6 hover:border-amber-500/50 transition duration-300">
+                        <div class="flex justify-between items-center sm:hidden mb-2">
+                            <span class="px-2.5 py-0.5 bg-amber-500/10 text-amber-400 font-semibold text-xs rounded-full border border-amber-500/30">
+                                Feb 2025 - Present
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-xl">Project Engineer / Document Controller</h3>
+                        <p class="text-amber-400 text-sm font-medium mt-1">Boracay Tubi System, Inc.</p>
+                        <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Boracay, Malay, Aklan</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Managing technical documentation, engineering drawings, project status reports, transmittals, and supporting overall project workflow coordination for water infrastructure projects.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline group sm:flex-row-reverse">
+                    <div class="order-1 w-full sm:w-5/12 hidden sm:block text-left pl-8">
+                        <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 font-semibold text-sm rounded-full border border-slate-700">
+                            Feb 16, 2023 - Feb 12, 2025
+                        </span>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-slate-700 shadow-xl w-10 h-10 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-transform duration-300">
+                        <i class="fa-solid fa-boxes-stacked text-amber-400 text-xs mx-auto"></i>
+                    </div>
+                    <div class="order-1 bg-slate-800 border border-slate-700/80 rounded-2xl shadow-xl w-full sm:w-5/12 ml-10 sm:ml-0 p-6 hover:border-amber-500/50 transition duration-300">
+                        <div class="flex justify-between items-center sm:hidden mb-2">
+                            <span class="px-2.5 py-0.5 bg-slate-800 text-slate-300 font-semibold text-xs rounded-full border border-slate-700">
+                                Feb 2023 - Feb 2025
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-xl">Inventory Clerk</h3>
+                        <p class="text-amber-400 text-sm font-medium mt-1">Boracay Tubi System, Inc.</p>
+                        <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Boracay, Malay, Aklan</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Overseeing material logs, inventory auditing, procurement support, database management, and technical supply coordination.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline group">
+                    <div class="order-1 w-full sm:w-5/12 hidden sm:block text-right pr-8">
+                        <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 font-semibold text-sm rounded-full border border-slate-700">
+                            Sep 21, 2021 - Jun 30, 2022
+                        </span>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-slate-700 shadow-xl w-10 h-10 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-transform duration-300">
+                        <i class="fa-solid fa-hands-holding-child text-amber-400 text-xs mx-auto"></i>
+                    </div>
+                    <div class="order-1 bg-slate-800 border border-slate-700/80 rounded-2xl shadow-xl w-full sm:w-5/12 ml-10 sm:ml-0 p-6 hover:border-amber-500/50 transition duration-300">
+                        <div class="flex justify-between items-center sm:hidden mb-2">
+                            <span class="px-2.5 py-0.5 bg-slate-800 text-slate-300 font-semibold text-xs rounded-full border border-slate-700">
+                                Sep 2021 - Jun 2022
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-xl">Technical Facilitator</h3>
+                        <p class="text-amber-400 text-sm font-medium mt-1">DSWD KALAHI CIDSS</p>
+                        <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Poblacion, Madalag, Aklan</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Facilitated technical engineering designs, sub-project proposals, and community-driven development infrastructure projects in coordination with local government units.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="mb-12 flex justify-between items-center w-full right-timeline group sm:flex-row-reverse">
+                    <div class="order-1 w-full sm:w-5/12 hidden sm:block text-left pl-8">
+                        <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 font-semibold text-sm rounded-full border border-slate-700">
+                            Jan 6, 2020 - Sep 13, 2021
+                        </span>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-slate-700 shadow-xl w-10 h-10 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-transform duration-300">
+                        <i class="fa-solid fa-building-columns text-amber-400 text-xs mx-auto"></i>
+                    </div>
+                    <div class="order-1 bg-slate-800 border border-slate-700/80 rounded-2xl shadow-xl w-full sm:w-5/12 ml-10 sm:ml-0 p-6 hover:border-amber-500/50 transition duration-300">
+                        <div class="flex justify-between items-center sm:hidden mb-2">
+                            <span class="px-2.5 py-0.5 bg-slate-800 text-slate-300 font-semibold text-xs rounded-full border border-slate-700">
+                                Jan 2020 - Sep 2021
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-xl">General Services (Engineering Office)</h3>
+                        <p class="text-amber-400 text-sm font-medium mt-1">LGU Madalag</p>
+                        <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Poblacion, Madalag, Aklan</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Provided essential engineering administrative support, drafting assistance, document verification, and site assessment for municipal infrastructure developments.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5 -->
+                <div class="flex justify-between items-center w-full right-timeline group">
+                    <div class="order-1 w-full sm:w-5/12 hidden sm:block text-right pr-8">
+                        <span class="inline-block px-3 py-1 bg-slate-800 text-slate-300 font-semibold text-sm rounded-full border border-slate-700">
+                            Jun 4, 2018 - May 31, 2019
+                        </span>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-slate-700 shadow-xl w-10 h-10 rounded-full border-4 border-slate-900 group-hover:scale-125 transition-transform duration-300">
+                        <i class="fa-solid fa-file-contract text-amber-400 text-xs mx-auto"></i>
+                    </div>
+                    <div class="order-1 bg-slate-800 border border-slate-700/80 rounded-2xl shadow-xl w-full sm:w-5/12 ml-10 sm:ml-0 p-6 hover:border-amber-500/50 transition duration-300">
+                        <div class="flex justify-between items-center sm:hidden mb-2">
+                            <span class="px-2.5 py-0.5 bg-slate-800 text-slate-300 font-semibold text-xs rounded-full border border-slate-700">
+                                Jun 2018 - May 2019
+                            </span>
+                        </div>
+                        <h3 class="font-bold text-white text-xl">Job Order Support</h3>
+                        <p class="text-amber-400 text-sm font-medium mt-1">LGU Makato</p>
+                        <p class="text-xs text-slate-400 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Poblacion, Makato, Aklan</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Assisted municipal engineering tasks, administrative record maintenance, field inspections, and public works document handling.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Capabilities & Software</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Technical & Virtual Assistant Skills</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- CAD & Design -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 text-xl mb-4">
+                        <i class="fa-solid fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">AutoCAD & Technical Drafting</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Precision technical drafting, CAD conversions, floor plans, and architectural design layout assistance.
+                    </p>
+                </div>
+
+                <!-- SketchUp -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 text-xl mb-4">
+                        <i class="fa-solid fa-cube"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">SketchUp 3D Modeling</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        3D modeling, spatial visualization, preliminary concept modeling, and technical rendering.
+                    </p>
+                </div>
+
+                <!-- Office Applications -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 text-xl mb-4">
+                        <i class="fa-solid fa-file-excel"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">MS Excel & Word</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Spreadsheet calculations, automated reporting, data entry, document formatting, and executive communication.
+                    </p>
+                </div>
+
+                <!-- Virtual Assistance & Document Control -->
+                <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center text-amber-500 text-xl mb-4">
+                        <i class="fa-solid fa-folder-tree"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-2">Document & Inventory Control</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Remote document indexing, file management, inventory audits, supply tracking, and administrative support.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Skill Progress Bars -->
+            <div class="mt-12 bg-slate-800/50 border border-slate-700/60 rounded-2xl p-8">
+                <h3 class="text-lg font-bold text-white mb-6 flex items-center">
+                    <i class="fa-solid fa-sliders text-amber-500 mr-3"></i> Core Proficiency Matrix
+                </h3>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-300 font-medium">Virtual Assistance & Office Administration</span>
+                            <span class="text-amber-400 font-bold">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-300 font-medium">Technical Drafting & AutoCAD</span>
+                            <span class="text-amber-400 font-bold">90%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-300 font-medium">Document Management & Records Control</span>
+                            <span class="text-amber-400 font-bold">95%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-300 font-medium">Data Entry & MS Office Tools</span>
+                            <span class="text-amber-400 font-bold">92%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2.5">
+                            <div class="bg-amber-500 h-2.5 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Academic Background</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Educational History</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- College -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 bg-amber-500/10 text-amber-400 font-mono text-xs px-3 py-1 rounded-bl-xl border-l border-b border-amber-500/20">
+                        College
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 text-lg">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Garcia College of Technology</h4>
+                        <p class="text-amber-400 font-medium text-sm mt-1">Bachelor of Science in Civil Engineering</p>
+                        <p class="text-xs text-slate-400 mt-1 mb-3"><i class="fa-solid fa-location-dot mr-1"></i> Kalibo, Aklan | 2017 - 2018</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed mt-4 pt-4 border-t border-slate-700/60">
+                        Comprehensive college training providing strong analytical foundations, design principles, and problem-solving skills.
+                    </p>
+                </div>
+
+                <!-- High School -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 bg-amber-500/10 text-amber-400 font-mono text-xs px-3 py-1 rounded-bl-xl border-l border-b border-amber-500/20">
+                        High School
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 text-lg">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Torralba National High School</h4>
+                        <p class="text-amber-400 font-medium text-sm mt-1">Athlete of the Year (2012 - 2013)</p>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Torralba, Banga, Aklan | 2012 - 2013</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed mt-4 pt-4 border-t border-slate-700/60">
+                        Recognized for outstanding discipline, athletic involvement, and academic performance.
+                    </p>
+                </div>
+
+                <!-- Elementary -->
+                <div class="bg-slate-800 border border-slate-700 rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between">
+                    <div class="absolute top-0 right-0 bg-amber-500/10 text-amber-400 font-mono text-xs px-3 py-1 rounded-bl-xl border-l border-b border-amber-500/20">
+                        Elementary
+                    </div>
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center mb-4 text-lg">
+                            <i class="fa-solid fa-book-open"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Paningayan Elementary School</h4>
+                        <p class="text-amber-400 font-medium text-sm mt-1">Salutatorian (2008 - 2009)</p>
+                        <p class="text-xs text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i> Paningayan, Madalag, Aklan | 2008 - 2009</p>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed mt-4 pt-4 border-t border-slate-700/60">
+                        Graduated with high honors (Salutatorian) demonstrating consistent dedication to academic excellence.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements & Awards Section -->
+    <section id="achievements" class="py-20 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Strategic Discipline</h2>
+                <p class="text-3xl sm:text-4xl font-extrabold text-white">Awards & Achievements</p>
+                <p class="text-slate-400 text-sm mt-2">Demonstrated tactical strategy, focus, and analytical problem-solving through regional chess championships.</p>
+                <div class="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Award 1 -->
+                <div class="bg-gradient-to-b from-slate-800 to-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative group hover:border-amber-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400">AY 2016 - 2017</span>
+                    <h3 class="text-lg font-bold text-white mt-1">Champion in Chess</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garcia College of Technology</p>
+                </div>
+
+                <!-- Award 2 -->
+                <div class="bg-gradient-to-b from-slate-800 to-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative group hover:border-amber-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400">Academic Year 2017</span>
+                    <h3 class="text-lg font-bold text-white mt-1">Silver Medalist in WVRAA</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garcia College of Technology</p>
+                </div>
+
+                <!-- Award 3 -->
+                <div class="bg-gradient-to-b from-slate-800 to-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative group hover:border-amber-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400">AY 2015 - 2016</span>
+                    <h3 class="text-lg font-bold text-white mt-1">Bronze Medalist in WVRAA</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garcia College of Technology</p>
+                </div>
+
+                <!-- Award 4 -->
+                <div class="bg-gradient-to-b from-slate-800 to-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative group hover:border-amber-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400">AY 2014 - 2015</span>
+                    <h3 class="text-lg font-bold text-white mt-1">Silver Medalist in Chess</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garcia College of Technology</p>
+                </div>
+
+                <!-- Award 5 -->
+                <div class="bg-gradient-to-b from-slate-800 to-slate-800/60 border border-slate-700/80 rounded-2xl p-6 relative group hover:border-amber-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-amber-500/20 rounded-xl flex items-center justify-center text-amber-400 text-2xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <span class="text-xs font-mono text-amber-400">AY 2013 - 2014</span>
+                    <h3 class="text-lg font-bold text-white mt-1">Chess Champion</h3>
+                    <p class="text-xs text-slate-400 mt-1">Garcia College of Technology</p>
+                </div>
+
+                <!-- Strategic Mindset Callout -->
+                <div class="bg-slate-800/40 border border-slate-700/60 rounded-2xl p-6 flex flex-col justify-center">
+                    <div class="flex items-center space-x-3 text-amber-500 mb-2">
+                        <i class="fa-solid fa-chess text-xl"></i>
+                        <span class="text-sm font-bold uppercase tracking-wider text-white">Strategic Advantage</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Competitive chess highlights foresight, strategic analysis, calm problem-solving under tight deadlines, and methodical organization—traits directly transferred to virtual support roles.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800 no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <h2 class="text-xs font-semibold text-amber-500 uppercase tracking-widest mb-2">Connect</h2>
+                        <p class="text-3xl font-extrabold text-white">Get In Touch</p>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Looking for a reliable Virtual Assistant, Document Controller, or Technical Coordinator? Feel free to send a message or contact me directly.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4 bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Email Address</p>
+                                <a href="mailto:christinelyn.cristobal@gmail.com" class="text-slate-200 hover:text-amber-400 font-semibold text-sm transition">christinelyn.cristobal@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Contact Number</p>
+                                <a href="tel:09701429175" class="text-slate-200 hover:text-amber-400 font-semibold text-sm transition">09701429175</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 bg-slate-800/80 border border-slate-700/80 p-4 rounded-xl">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-500 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium">Location</p>
+                                <p class="text-slate-200 font-semibold text-sm">Napnot, Madalag 5603, Aklan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Form -->
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-xl">
+                        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-amber-500 transition">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                    <input type="email" required placeholder="john@example.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-amber-500 transition">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Subject</label>
+                                <input type="text" required placeholder="Virtual Assistant Inquiry / Project Hiring" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-amber-500 transition">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                                <textarea rows="4" required placeholder="Write your message here..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-slate-200 text-sm focus:outline-none focus:border-amber-500 transition"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold rounded-xl hover:shadow-lg hover:shadow-amber-500/20 transition duration-200">
+                                Send Message
+                            </button>
+                        </form>
+
+                        <div id="form-alert" class="hidden mt-4 p-4 rounded-xl text-center text-sm font-medium"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 py-8 border-t border-slate-800/80 text-slate-500 text-xs no-print">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Christine Lyn N. Cristobal-Gomez. All rights reserved.</p>
+            <p>Virtual Assistant • Project Coordination • Technical Support</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const alertBox = document.getElementById('form-alert');
+            
+            alertBox.className = "mt-4 p-4 rounded-xl text-center text-sm font-medium bg-amber-500/20 text-amber-300 border border-amber-500/30";
+            alertBox.innerText = "Thank you! Your message has been prepared. Please reach out directly to christinelyn.cristobal@gmail.com for prompt replies.";
+            alertBox.classList.remove('hidden');
+
+            document.getElementById('contact-form').reset();
+        }
+    </script>
+</body>
+</html>
